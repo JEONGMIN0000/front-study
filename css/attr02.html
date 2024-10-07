@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .font-test{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 44px;
+            font-variant: small-caps;
+            letter-spacing: 5px;
+            line-height: 2em;
+        }
+
+        .font-box{
+            font-size: 32px;
+        }
+
+        .p2-inbox{
+            font-size: 1.5em; /* 부모요소 크기 대비 *1.5 */
+            font-style: oblique;
+            text-align: center;
+        }
+
+        .p3-inbox{
+            font-size: 1.5rem; /* html 크기 대비 *1.5 */
+            font-weight: bold; /* 700 진하게 bold */
+        }
+
+        .del-span{
+            text-decoration: line-through;
+        }
+
+        .ins-span{
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <p>기존 기본 테스트</p>
+    <p class="font-test">text test</p>
+    <p class="font-test">글자 테스트</p>
+
+    <div class="font-box">
+        <p>박스 안에 글자 111</p>
+        <p class="p2-inbox">박스 안에 글자 222</p>
+        <p class="p3-inbox">박스 안에 글자 333</p>
+        <span class="del-span">del span</span>
+        <span class="ins-span">ins span</span>
+    </div>
+</body>
+</html>
