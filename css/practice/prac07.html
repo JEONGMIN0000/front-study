@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .pause{
+            width: 100px;
+            height: 50px;
+            background-color: lightgrey;
+        }
+
+        .pause:hover ~ .box{
+            animation-play-state: paused;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            background-color: blue;
+
+            position: relative;
+
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-play-state: running;
+            animation-fill-mode: both;
+        }
+
+        .box1{
+            animation-name: box-ani1;
+        }
+        
+        .box2{
+            animation-name: box-ani2;
+        }
+
+        .box3{
+            animation-name: box-ani3;
+        }
+        .box1:hover, .box2:hover, .box3:hover{
+            animation-play-state: paused;
+        }
+
+
+        @keyframes box-ani1{
+            0%{
+                background-color: blue;
+                left: 0px;
+
+            }
+            50%{
+                background-color: orange;
+                left: 100px;
+
+            }
+            100%{
+                background-color: pink;
+                left: 200px;
+
+            }
+
+        }
+
+        @keyframes box-ani2{
+            0%{
+                background-color: blue;
+                top: 0px;
+
+            }
+            50%{
+                background-color: orange;
+                top: 100px;
+
+            }
+            100%{
+                background-color: pink;
+                top: 200px;
+
+            }
+            
+        }
+
+        @keyframes box-ani3{
+            0%{
+                background-color: blue;
+                top: 0px;
+                left: 0px;
+
+            }
+            50%{
+                background-color: orange;
+                top: 100px;
+                left: 100px;
+
+            }
+            100%{
+                background-color: pink;
+                top: 200px;
+                left: 200px;
+
+            }
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pause">멈추기</div>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+
+    
+    
+</body>
+</html>
