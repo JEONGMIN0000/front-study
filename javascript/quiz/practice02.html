@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id = "frm_login">
+        <input type="text" id="loginId" placeholder="아이디"><br>
+        <input type="password" id="loginPw" placeholder="비밀번호"><br>
+        <button id="btnLogin" onclick="tryLogin()">로그인 시도</button><br>
+    </form>
+    
+
+    <script>
+        //코드작성
+
+        const id = document.querySelector('#loginId');
+        const pw = document.querySelector('#loginPw');
+        const form = document.getElementById('frm_login');
+        const btn_login = document.getElementById('btnLogin');
+
+        id.addEventListener('keydown',(event)=>{
+            console.log(event);
+
+            if(event.keyCode == 13){
+                event.preventDefault();
+                pw.focus();
+            }
+
+        })
+        
+        pw.addEventListener('keydown',(event)=>{
+            console.log(event);
+
+            if(event.keyCode == 13){
+                tryLogin();
+                //btn_login.click();
+            }
+
+        })
+        
+        function tryLogin(){
+            
+            form.addEventListener('submit', (event)=>{
+                event.preventDefault();
+
+                if(id.value.trim() == ""){
+                    alert('아이디 입력');
+                    id.value = "";
+                    id.focus();
+                }else if(pw.value.trim() == ""){
+                    alert('비밀번호 입력');
+                    pw.value = "";
+                    pw.focus();
+                }
+
+                form.submit();
+            });
+        }
+    </script>
+</body>
+
+</html>
